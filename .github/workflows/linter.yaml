@@ -6,7 +6,7 @@ permissions: read-all
 
 jobs:
   tflint:
-    runs-on: ubutnu-18.04
+    runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v2
       name: Checkout source code
@@ -15,7 +15,7 @@ jobs:
       name: Cache plugin dir
       with:
         path: ~/.tflint.d/plugins
-        key: ubutnu-18.04-tflint-${{ hashFiles('.tflint.hcl') }}
+        key: ubuntu-18.04-tflint-${{ hashFiles('.tflint.hcl') }}
 
     - uses: terraform-linters/setup-tflint@v3
       name: Setup TFLint
